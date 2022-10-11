@@ -1,0 +1,7 @@
+{
+    "username"  : "Mie",
+    "password"  : "j5pP5LwHNPVxi995",
+    "ip" : "80.65.0.21/24",
+    "urlmongodb" : "mongosh mongodb+srv://cluster.xajie2t.mongodb.net --apiVersion 1 --username Mie --password j5pP5LwHNPVxi995"
+    
+}
