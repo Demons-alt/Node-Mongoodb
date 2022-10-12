@@ -1,19 +1,29 @@
 {
   "name": "api-mongodb",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "nodemon server.js"
+    "start-dev": "nodemon server.js",
+    "start": "npm server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Demons-alt/Node-Mongoodb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Demons-alt/Node-Mongoodb/issues"
+  },
+  "homepage": "https://github.com/Demons-alt/Node-Mongoodb#readme",
+  "description": ""
 }

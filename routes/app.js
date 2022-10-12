@@ -1,20 +1,32 @@
-const client = require('../module/mongodb');
+// const client = require('../module/mongodb'); / local
 const Contact = require('../model/contact');
+const routeMongo = require('./contact/ContactRouter');
+const HomeRoute = require('./home/HomeRouter');
 
-const clients = require('../module/cloudMongodb');
+const clients = require('../module/cloudMongodb'); //cloud
+const cors = require('cors')
 const express = require('express');
+const bodyParser = require('body-parser');
 
-const dbname = 'tes'
+
+
 const app = express()
 
-const {
-    AddOneData,
-    AddManyData,
-    ReadAllData,
+// const {
+//     AddOneData,
+//     AddManyData,
+//     ReadAllData,
 
-} = require('../controller/CRUDmongodb');
+// } = require('../controller/CRUDmongodb');
 
-//mongodb local
+app.use(cors())
+app.use(bodyParser.json())
+app.use(
+    bodyParser.urlencoded({
+        extended : true
+    })
+)
+// mongodb local
 // client.connect(async(err, client)=> {
 //     if (err) {
 //         return console.log(err);
@@ -37,9 +49,10 @@ const {
 //   });
 
 // tes mongoose
+app.use('/home', HomeRoute)
+app.use('/contact', routeMongo)
+// app.use('/', (req, res) => res.send('Hello World!'))
 
 
-
-app.get('/', (req, res) => res.send('Hello World!'))
 
 module.exports = app
